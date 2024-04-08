@@ -17,22 +17,31 @@ import tech.bacuri.brewer.model.Cerveja;
 public class CervejaController {
 
     @GetMapping("/novo")
-    public String novo(Cerveja cerveja) {
+    public String novo(Model model) {
+
         return "cerveja/CadastroCerveja";
     }
 
     @PostMapping("/novo")
     public String cadastrar(@Valid Cerveja cerveja,
                             BindingResult result,
+                            Model model,
                             RedirectAttributes attributes) {
 
         if (result.hasErrors()) {
-            return novo(cerveja);
+            model.addAttribute(cerveja);
+            return novo(model);
         }
 
         // Salvar no banco de dados...
         attributes.addFlashAttribute("mensagem", "Cerveja salva com sucesso!");
         System.out.println(">>> sku: " + cerveja.getSku());
         return "redirect:/cervejas/novo";
+    }
+
+    @GetMapping("/cadastro-produto")
+    public String cadastroProduto(Model model) {
+
+        return "cerveja/cadastro-pro duto";
     }
 }
