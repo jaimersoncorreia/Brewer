@@ -8,12 +8,12 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Cerveja {
-    @NotBlank
+    @NotBlank(message = "Sku é um campo obrigatório")
     private String sku;
 
-    @NotBlank
+    @NotBlank(message = "Nome é um campo obrigatório")
     private String nome;
 
-    @Size(min = 1, max = 50)
+    @Size(min = 1, max = 50, message = "Deve ter entre {min} e {max} caracteres.")
     private String descricao;
 }
