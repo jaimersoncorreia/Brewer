@@ -13,7 +13,7 @@ import tech.bacuri.brewer.model.Cerveja;
 
 @Controller
 @RequestMapping("/cervejas")
-public class CervejaController {
+public class CervejasController {
 
     @GetMapping("/novo")
     public String novo(Model model) {
