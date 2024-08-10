@@ -27,18 +27,19 @@
 <body>
 <div class="aw-layout-page">
 
-    <div th:replace="layout/fragments/BarraNavegacao :: navbar"></div>
+    <div th:replace="~{layout/fragments/BarraNavegacao :: navbar}"></div>
 
-    <div th:replace="layout/fragments/MenuLateral :: layout-sidebar"></div>
+    <div th:replace="~{layout/fragments/MenuLateral :: layout-sidebar}"></div>
 
     <section class="aw-layout-content  js-content" layout:fragment="conteudo"></section>
 
-    <div th:replace="layout/fragments/Footer :: layout-footer"></div>
+    <div th:replace="~{layout/fragments/Footer :: layout-footer}"></div>
 </div>
 <script th:src="@{/layout/javascripts/vendors.min.js}"></script>
 <script th:src="@{/layout/javascripts/algaworks.min.js}"></script>
 
 <script th:src="@{/webjars/jquery-maskmoney/dist/jquery.maskMoney.min.js}"></script>
+
 
 <script th:src="@{/javascripts/brewer.js}"></script>
 <th:block layout:fragment="javascript-extra"></th:block>

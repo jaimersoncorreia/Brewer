@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout/LayoutPadrao">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo de uso do Context do Thymeleaf</title>
+</head>
+<body>
+
+<section class="aw-layout-content  js-content" layout:fragment="conteudo">
+    <h1>Exemplo de uso do Context do Thymeleaf</h1>
+    <form>
+            <textarea th:text="${textarea}" name="editor1" id="editor1" rows="10" cols="80">
+            </textarea>
+    </form>
+</section>
+
+<th:block layout:fragment="javascript-extra">
+    <script th:src="@{/webjars/ckeditor/full/ckeditor.js}"></script>
+    <script>
+        CKEDITOR.replace('editor1', {customConfig: '/brewer/javascripts/config.js'});
+    </script>
+</th:block>
+</body>
+</html>

@@ -2,11 +2,11 @@ package tech.bacuri.brewer.model;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Builder;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
+@Builder
 public class Cerveja {
     @NotBlank(message = "Sku é um campo obrigatório")
     private String sku;
